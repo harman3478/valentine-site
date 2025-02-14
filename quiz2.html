@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pop Quiz - Question 2</title>
+  <style>
+    body {
+      background-color: #ffb6c1;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    img.quiz-image {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    .options button, #nextButton {
+      display: block;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 10px;
+      width: 200px;
+    }
+    .options button:hover, #nextButton:hover {
+      background-color: darkred;
+    }
+    .feedback {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .wrong-answer {
+      color: yellow;
+    }
+    .correct-answer {
+      color: lightgreen;
+    }
+    #nextButton {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Image Above Title -->
+    <img class="quiz-image" src="superhero.jpeg" alt="Superhero Image">
+    <h1>Pop Quiz - Question 2</h1>
+    <p>Who is Harman's favorite superhero?</p>
+    <div class="options">
+      <button onclick="checkAnswer('Batman')">Batman</button>
+      <button onclick="checkAnswer('Superman')">Superman</button>
+      <button onclick="checkAnswer('Spiderman')">Spiderman</button>
+      <button onclick="checkAnswer('Captain Underpants')">Captain Underpants</button>
+    </div>
+    <!-- Feedback message -->
+    <p class="feedback" id="feedbackMessage"></p>
+    <!-- Next Question Button -->
+    <button id="nextButton">Next Question</button>
+  </div>
+
+  <script>
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedbackMessage");
+      const nextButton = document.getElementById("nextButton");
+
+      if (answer === "Batman") {
+        // Correct answer
+        feedback.textContent = "Correct!";
+        feedback.classList.remove("wrong-answer");
+        feedback.classList.add("correct-answer");
+        // Show Next Question button
+        nextButton.style.display = "block";
+      } else {
+        // Wrong answer, let them try again
+        feedback.textContent = "Wrong! Try again!!!";
+        feedback.classList.remove("correct-answer");
+        feedback.classList.add("wrong-answer");
+      }
+    }
+
+    // When Next Question is clicked, go to quiz3.html
+    document.getElementById("nextButton").addEventListener("click", function () {
+      window.location.href = "quiz3.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day ❤️</title>
-    <style>
-        body {
-            background-color: #ffb6c1;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        p {
-            font-size: 1.5rem;
-        }
-        img {
-            width: 80%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .heart-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .heart-btn:hover {
-            background-color: darkred;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine's Day ❤️</title>
+  <style>
+    body {
+      background-color: #ffb6c1;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .heart-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .heart-btn:hover {
+      background-color: darkred;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Valentine's Day, My Love! ❤️</h1>
-        <p>You mean the world to me! I made this just for you. 💖</p>
-        <img src="valentine.jpg" alt="Valentine Image">
-        <button class="heart-btn" onclick="showMessage()">Click for a surprise! 💕</button>
-        <p id="message" style="display: none; font-size: 1.8rem;">You are my everything! 💘</p>
-    </div>
+  <div class="container">
+    <h1>Happy Valentine's Day, My Love! ❤️</h1>
+    <p>You mean the world to me! I made this just for you. 💖</p>
+    <img src="valentine.jpg" alt="Valentine Image" />
+    <button class="heart-btn" onclick="goToQuiz()">Click for a surprise! 💕</button>
+  </div>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").style.display = "block";
-        }
-    </script>
+  <script>
+    function goToQuiz() {
+      window.location.href = "popquiz.html";
+    }
+  </script>
 </body>
 </html>

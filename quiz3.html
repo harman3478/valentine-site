@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pop Quiz - Question 3</title>
+  <style>
+    body {
+      background-color: #ffb6c1;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    img.quiz-image {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    input {
+      padding: 10px;
+      font-size: 1.2rem;
+      width: 200px;
+      text-align: center;
+      border-radius: 10px;
+      border: 2px solid red;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: darkred;
+    }
+    .feedback {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .next-button {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="quiz-image" src="love.jpg" alt="Love Image">
+    <h1>Pop Quiz - Question 3</h1>
+    <p>How much does Harman love you?</p>
+    <input type="number" id="loveInput" placeholder="Enter a number">
+    <button onclick="checkLove()">Submit</button>
+    <p class="feedback" id="feedbackMessage"></p>
+    <button id="nextButton" class="next-button">Next Question</button>
+  </div>
+
+  <script>
+    let attempts = 0;
+    let higherText = "Go higher!";
+
+    function checkLove() {
+      const input = document.getElementById("loveInput").value;
+      const feedback = document.getElementById("feedbackMessage");
+      const nextButton = document.getElementById("nextButton");
+
+      attempts++;
+
+      if (attempts < 5) {
+        feedback.textContent = higherText;
+        higherText += " higher!";
+      } else {
+        feedback.textContent = "The correct answer is actually so high it doesn't fit on the screen!";
+        nextButton.style.display = "block";
+      }
+    }
+
+    // When Next Question is clicked, go to quiz4.html (create this file for the next question)
+    document.getElementById("nextButton").addEventListener("click", function () {
+      window.location.href = "quiz4.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Congratulations, My Love!</title>
+  <style>
+    body {
+      background-color: #ffb6c1;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
+    .container {
+      z-index: 2;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.5rem;
+      width: 80%;
+      margin: auto;
+    }
+    .heart {
+      position: absolute;
+      top: -10vh;
+      color: red;
+      font-size: 24px;
+      opacity: 0.8;
+      animation: fallAndSway linear infinite;
+    }
+    @keyframes fallAndSway {
+      0% {
+        transform: translateY(-10vh) translateX(0);
+        opacity: 1;
+      }
+      25% {
+        transform: translateY(25vh) translateX(20px);
+      }
+      50% {
+        transform: translateY(50vh) translateX(0);
+      }
+      75% {
+        transform: translateY(75vh) translateX(-20px);
+      }
+      100% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Yayyyyy! You Passed! 🎉</h1>
+    <p>Congratulations and Happy Valentine's Day! ❤️ I love you so much, and you are the greatest thing to ever happen to me EVER! 💖</p>
+  </div>
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      const duration = Math.random() * 3 + 3;
+      heart.style.animationDuration = duration + "s";
+      
+      document.body.appendChild(heart);
+      
+      setTimeout(() => {
+        heart.remove();
+      }, duration * 1000);
+    }
+    
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
